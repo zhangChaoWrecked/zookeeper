@@ -1,4 +1,4 @@
-package com.wrecked.zookeeper;
+package com.zk.zookeeper;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

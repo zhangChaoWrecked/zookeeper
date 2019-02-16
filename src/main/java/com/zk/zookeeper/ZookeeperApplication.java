@@ -1,4 +1,4 @@
-package com.wrecked.zookeeper;
+package com.zk.zookeeper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
