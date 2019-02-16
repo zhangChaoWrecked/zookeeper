@@ -15,6 +15,8 @@ public class ZKExists {
     // Method to check existence of znode and its status, if znode is available.
     public static Stat znode_exists(String path) throws
             KeeperException, InterruptedException {
+        //path- Znode路径
+        //watcher - 布尔值，用于指定是否监视指定的znode
         return zk.exists(path, true);
     }
 
@@ -24,6 +26,7 @@ public class ZKExists {
         try {
             conn = new ZooKeeperConnection();
             zk = conn.connect("localhost");
+
             Stat stat = znode_exists(path); // Stat checks the path of the znode
 
             if (stat != null) {

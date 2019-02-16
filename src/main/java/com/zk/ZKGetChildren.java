@@ -30,8 +30,8 @@ public class ZKGetChildren {
 
             if (stat != null) {
 
-                //“getChildren" method- get all the children of znode.It has two
-                //args, path and watch
+                //  path - Znode路径。
+                // watcher - 监视器类型的回调函数。当指定的znode被删除或znode下的子节点被创建/删除时，ZooKeeper集合将进行通知。这是一次性通知。
                 List<String> children = zk.getChildren(path, false);
                 for (int i = 0; i < children.size(); i++)
                     System.out.println(children.get(i)); //Print children's

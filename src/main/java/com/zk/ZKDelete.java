@@ -13,6 +13,8 @@ public class ZKDelete {
 
     // Method to check existence of znode and its status, if znode is available.
     public static void delete(String path) throws KeeperException, InterruptedException {
+        // path - Znode路径
+        // version - znode的当前版本。
         zk.delete(path, zk.exists(path, true).getVersion());
     }
 

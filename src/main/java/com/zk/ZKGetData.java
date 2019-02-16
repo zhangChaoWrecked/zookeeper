@@ -28,7 +28,6 @@ public class ZKGetData {
             conn = new ZooKeeperConnection();
             zk = conn.connect("localhost");
             Stat stat = znode_exists(path);
-
             if(stat != null) {
                 byte[] b = zk.getData(path, new Watcher() {
 
@@ -45,6 +44,9 @@ public class ZKGetData {
                             String path = "/MyFirstZnode";
 
                             try {
+                                // path - Znode路径。
+                                // watcher - 监视器类型的回调函数。当指定的znode的数据改变时，ZooKeeper集合将通过监视器回调进行通知。这是一次性通知。
+                                //  stat - 返回znode的元数据。
                                 byte[] bn = zk.getData(path,
                                         false, null);
                                 String data = new String(bn,
