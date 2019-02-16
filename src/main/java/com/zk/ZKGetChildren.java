@@ -7,7 +7,7 @@ import org.apache.zookeeper.data.Stat;
 import java.util.List;
 
 /**
- * @author ZhangChao
+ * @author Wrecked
  * @date 2019.02.16  11:39
  */
 public class ZKGetChildren {
@@ -21,7 +21,7 @@ public class ZKGetChildren {
     }
 
     public static void main(String[] args) throws InterruptedException, KeeperException {
-        String path = "/MyFirstZnode"; // Assign path to the znode
+        String path = "/dubbo"; // Assign path to the znode
 
         try {
             conn = new ZooKeeperConnection();

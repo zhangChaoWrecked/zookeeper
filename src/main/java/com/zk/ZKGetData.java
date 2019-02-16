@@ -9,7 +9,7 @@ import org.apache.zookeeper.data.Stat;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @author ZhangChao
+ * @author Wrecked
  * @date 2019.02.16  11:38
  */
 public class ZKGetData {
@@ -21,7 +21,7 @@ public class ZKGetData {
     }
 
     public static void main(String[] args) throws InterruptedException, KeeperException {
-        String path = "/MyFirstZnode";
+        String path = "/MyFirstZnode0000000000";
         final CountDownLatch connectedSignal = new CountDownLatch(1);
 
         try {

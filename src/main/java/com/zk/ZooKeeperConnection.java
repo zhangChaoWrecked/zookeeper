@@ -21,6 +21,11 @@ public class ZooKeeperConnection {
      *   connectionString - ZooKeeper集合主机
      *   sessionTimeout - 会话超时（以毫秒为单位）
      *   watcher - 实现“监视器”界面的对象。ZooKeeper集合通过监视器对象返回连接状态。
+     *
+     *    CountDownLatch 用于停止（等待）主进程，直到客户端与ZooKeeper集合连接。
+     *    ZooKeeper集合通过监视器回调来回复连接状态。一旦客户端与ZooKeeper集合连接，监视器回调就会被调用，
+     *    并且监视器回调函数调用CountDownLatch的countDown方法来释放锁，
+     *    在主进程中await。
      */
 
     public ZooKeeper connect(String host) throws IOException, InterruptedException {

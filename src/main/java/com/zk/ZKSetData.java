@@ -4,7 +4,7 @@ import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooKeeper;
 
 /**
- * @author ZhangChao
+ * @author Wrecked
  * @date 2019.02.16  11:38
  */
 public class ZKSetData {

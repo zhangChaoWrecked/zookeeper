@@ -5,7 +5,7 @@ import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.Stat;
 
 /**
- * @author ZhangChao
+ * @author Wrecked
  * @date 2019.02.16  11:37
  */
 public class ZKExists {
@@ -22,20 +22,17 @@ public class ZKExists {
 
     public static void main(String[] args) throws InterruptedException, KeeperException {
         String path = "/MyFirstZnode"; // Assign znode to the specified path
-
         try {
             conn = new ZooKeeperConnection();
             zk = conn.connect("localhost");
-
             Stat stat = znode_exists(path); // Stat checks the path of the znode
-
             if (stat != null) {
-                System.out.println("Node exists and the node version is " +
-                        stat.getVersion());
+                System.out.println("Node exists and the node version is [" + stat.getVersion() + "]");
+                System.out.println("Node NumChildren:[ " + stat.getNumChildren() + "]");
+                System.out.println("Node DataLength:[ " + stat.getDataLength() + "]");
             } else {
                 System.out.println("Node does not exists");
             }
-
         } catch (Exception e) {
             System.out.println(e.getMessage()); // Catches error messages
         }
